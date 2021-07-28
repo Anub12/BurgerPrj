@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import Button  from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Aaux from '../../../hoc/Aaux/Aaux';
-import Button from '../../UI/Button/Button';
 
 class OrderSummary extends Component {
     // This could be a functional component, doesn't have to be a class
@@ -27,8 +28,8 @@ class OrderSummary extends Component {
                 </ul>
                 <p><strong>Total Price: {this.props.price.toFixed( 2 )}</strong></p>
                 <p>Continue to Checkout?</p>
-                <Button btnType="Danger" clicked={this.props.purchaseCancelled}>CANCEL</Button>
-                <Button btnType="Success" clicked={this.props.purchaseContinued}>CONTINUE</Button>
+                <Button variant="outline-danger" onClick={this.props.purchaseCancelled}>CANCEL</Button>{' '}
+                <Button variant="outline-success" onClick={this.props.purchaseContinued}>CONTINUE</Button>{' '}
             </Aaux>
         );
     }
